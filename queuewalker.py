@@ -11,6 +11,12 @@ WORK_DIR='/opt/telmas'
 os.makedirs(WORK_DIR, exist_ok=True)
 os.chdir(WORK_DIR)
 
+TEL_API=os.environ['TEL_API']
+TEL_NAME=os.environ['TEL_NAME']
+TEL_HASH=os.environ['TEL_HASH']
+TEL_TEL=os.environ['TEL_TEL']
+TEL_CHAN_URL=os.environ['TEL_CHAN']
+
 REG_CODE_FILE=WORK_DIR+'/regme'
 
 def initQueue():
@@ -72,12 +78,6 @@ RQ_HOST=os.environ['RMQ_SERVICE_HOST']
 RQ_PORT=os.environ['RMQ_SERVICE_PORT_RABBITMQ']
 RQ_Q="telegram-iss"
 RQ_TTL=10000 # Message TTL for queue in mseconds
-
-TEL_API=os.environ['TEL_API']
-TEL_NAME=os.environ['TEL_NAME']
-TEL_HASH=os.environ['TEL_HASH']
-TEL_TEL=os.environ['TEL_TEL']
-TEL_CHAN_URL=os.environ['TEL_CHAN']
 
 initQueue()
 
