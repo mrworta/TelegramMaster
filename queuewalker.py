@@ -36,7 +36,7 @@ def tel_init():
       print("Your phone number is %s." % TEL_TEL)
       print("Please create file %s containing the reg code. You dont need to restart the container." % REG_CODE_FILE)
       print('You can do this using kubectl or docker exec command. e.g.:')
-      print('kubectl exec -ti telmas-walker-0 \'echo my-code > %s\'' % REG_CODE_FILE )
+      print('echo YOUR-CODE | kubectl exec -i telmas-walker-0 -- /usr/bin/tee %s' % REG_CODE_FILE )
 
       client.send_code_request(TEL_TEL)
       while not os.path.isfile(REG_CODE_FILE): time.sleep(5)
