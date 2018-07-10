@@ -2,6 +2,7 @@
 import pika
 import time
 import os
+import telethon.sync
 from telethon import TelegramClient
 
 for a in os.environ: print('Var: ', a, 'Value: ', os.getenv(a))
