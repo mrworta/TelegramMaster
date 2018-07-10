@@ -30,7 +30,7 @@ def initQueue():
 
 def tel_init():
     client = TelegramClient('TelMas', TEL_API, TEL_HASH)
-    assert client.connect()
+    client.connect()
     if not client.is_user_authorized():
       print("You need to authorize session first.")
       print("Your phone number is %s." % TEL_TEL)
